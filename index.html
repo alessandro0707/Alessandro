@@ -1,82 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark's Anime</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conexão entre Campo e Cidade</title>
 
-    <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('gif.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
+    section, h1, h2, p {
+      color: #00ffe0;
+    }
+
+    #projeto {
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 80%;
+      animation: fadeIn 1.5s ease;
+    }
+
+    img {
+      border-radius: 10px;
+      margin: 20px;
+      max-width: 90%;
+      height: auto;
+      box-shadow: 0 0 10px #00ffe0;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00cc88;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 20px auto;
+      font-weight: bold;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00ffaa;
+      box-shadow: 0 0 12px #00ffe0, 0 0 20px #00ffe0;
+    }
+
+    .enquete {
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      color: #99ffcc;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .enquete h3 {
+      color: #00ffff;
+    }
+
+    .enquete label {
+      display: block;
+      margin: 10px 0;
+      text-align: left;
+    }
+
+    .enquete button {
+      margin-top: 10px;
+    }
+
+    #mensagemEnquete {
+      margin-top: 15px;
+      color: #ffffff;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    Adicionar “<section id="projeto"
-    tabindex="0">” dentro do body, acima do h1.
-    <h1> CR7 </h1>
 
-    <img src="https://dmarilia.com.br/wp-content/uploads/2024/09/Screenshot_14-13-1024x638.jpg" alt="CR7">
+  <section id="projeto" tabindex="0">
+    <h1>Conexão entre Campo e Cidade</h1>
+    <p>A tecnologia une o rural e o urbano, promovendo inovação, sustentabilidade e qualidade de vida.</p>
+  </section>
 
-    <h2> GOAT 
-        CRISTIANO RONALDO DOS SANTOS </h2>
+  <img src="campo.jpg" alt="Imagem do Campo">
+  <h2>O Poder do Campo</h2>
+  <p>Com sensores, drones e automação, o campo evolui e alimenta a cidade com mais eficiência.</p>
 
-    <div>: Uma tag genérica usada para agrupar
-    elementos e estruturar o layout de uma página. Muito útil para organizar o
-    conteúdo.
-    
-    
-    Abas (Tabs): São usadas para organizar conteúdo em
-    diferentes seções, permitindo ao usuário navegar entre elas sem carregar uma
-    nova página. Elas geralmente envolvem botões, links e algum JavaScript para
-    alternar o conteúdo visível.
-    
-    
-     
-    
-    
-    background-color é usado para definir a cor de
-    fundo de um elemento HTML.
-    
-    
-    font-size: Define o tamanho da fonte.
-    
-    
-    text-align: Controla o alinhamento do texto
-    (esquerda, direita, centralizado ou justificado).
-    
-    
-    color: Define a cor do texto.
-    
-    
-    text-transform: Controla a transformação das
-    letras (maiúsculas, minúsculas, capitalização)
-</div>
-</body>
-<button
-onclick="mostrarImagem()">Mostrar Imagem</button>
+  <img src="cidade.jpg" alt="Imagem da Cidade">
+  <h2>Inovação na Cidade</h2>
+  <p>Cidades inteligentes valorizam produtos locais, usando apps, IoT e redes para se conectar ao campo.</p>
 
+  <button onclick="mostrarImagem()">Mostrar Imagem Surpresa</button>
+  <br>
+  <img id="imagem" src="imagem2.jpg" alt="Imagem surpresa" style="display: none; width: 300px;">
 
-    <img id="imagem"
-src="https://i.pinimg.com/736x/3f/fe/bf/3ffebf9cb953a5eceb48bfd2d54db8a2.jpg" style="display: none; width: 300px;">
-<img src="cr7.jpg" alt="Descrição da imagem" width="300">
+  <img src="cr7.jpg" alt="CR7" width="300">
+  <h2>Inspirando Conexões</h2>
+  <p>Assim como grandes atletas conectam culturas, a tecnologia conecta realidades diferentes.</p>
 
-   
+  <!-- Enquete 1 -->
+  <div class="enquete">
+    <h3>1. O que mais contribui para conectar o campo à cidade?</h3>
+    <form>
+      <label><input type="radio" name="enquete1"> Internet rural</label>
+      <label><input type="radio" name="enquete1"> Logística de transporte</label>
+      <label><input type="radio" name="enquete1"> Aplicativos de compra e venda</label>
+      <label><input type="radio" name="enquete1"> Educação tecnológica no campo</label>
+      <button type="button" onclick="responderEnquete('enquete1')">Enviar Resposta</button>
+    </form>
+    <p id="resposta-enquete1"></p>
+  </div>
 
+  <!-- Enquete 2 -->
+  <div class="enquete">
+    <h3>2. Você consome produtos de origem rural?</h3>
+    <form>
+      <label><input type="radio" name="enquete2"> Sim, regularmente</label>
+      <label><input type="radio" name="enquete2"> Sim, às vezes</label>
+      <label><input type="radio" name="enquete2"> Não tenho certeza</label>
+      <label><input type="radio" name="enquete2"> Não</label>
+      <button type="button" onclick="responderEnquete('enquete2')">Enviar Resposta</button>
+    </form>
+    <p id="resposta-enquete2"></p>
+  </div>
 
-    <script>
+  <!-- Enquete 3 -->
+  <div class="enquete">
+    <h3>3. Qual tecnologia você acha mais promissora no campo?</h3>
+    <form>
+      <label><input type="radio" name="enquete3"> Drones agrícolas</label>
+      <label><input type="radio" name="enquete3"> Sensores e IoT</label>
+      <label><input type="radio" name="enquete3"> Inteligência Artificial</label>
+      <label><input type="radio" name="enquete3"> Aplicativos de gestão</label>
+      <button type="button" onclick="responderEnquete('enquete3')">Enviar Resposta</button>
+    </form>
+    <p id="resposta-enquete3"></p>
+  </div>
 
+  <script>
+    function mostrarImagem() {
+      document.getElementById("imagem").style.display = "block";
+    }
 
-        function mostrarImagem() {
-
-
-            document.getElementById("imagem").style.display
-= "block";
-
-
+    function responderEnquete(nomeEnquete) {
+      const opcoes = document.getElementsByName(nomeEnquete);
+      let selecionado = "";
+      for (let opcao of opcoes) {
+        if (opcao.checked) {
+          selecionado = opcao.parentNode.innerText;
+          break;
         }
+      }
 
-    </script>
-     </button>
+      const elementoResposta = document.getElementById("resposta-" + nomeEnquete);
+      if (selecionado) {
+        elementoResposta.innerText = `Obrigado por sua resposta: "${selecionado}"`;
+      } else {
+        elementoResposta.innerText = "Por favor, selecione uma opção antes de enviar.";
+      }
+    }
+  </script>
+
+</body>
 </html>
-body {
-    background-image: url('imagens/fundo.jpg');
-    background-size: cover;
-  }
